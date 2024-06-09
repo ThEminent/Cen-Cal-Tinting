@@ -466,6 +466,11 @@ margin:0;
     gap:6px;
 }
 
+.testimony .persona > img{
+    height:32px;
+    width:32px;
+}
+
 .testimony .persona >  div > span:first-child{
     font-weight: 700;
 }
