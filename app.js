@@ -68,20 +68,22 @@ scroller.addEventListener("scroll", function(){
 
 check_scroller();
 function check_scroller(){
-    if(scroller.scrollLeft == 0){
+    if(scroller.scrollLeft <= 0){
         circle_btn_left.forEach(function(cbl){
             cbl.classList.add("o3");
         });
+        scroller.scrollBy({left: 0, behavior: 'auto'});
     }
     else
     circle_btn_left.forEach(function(cbl){
         cbl.classList.remove("o3");
     });
 
-    if(scroller.scrollLeft + scroller.clientWidth == scroller.scrollWidth){
+    if(scroller.scrollLeft + scroller.clientWidth >= scroller.scrollWidth){
         circle_btn_right.forEach(function(cbr){
             cbr.classList.add("o3");
         });
+        scroller.scrollBy({left: scroller.scrollWidth, behavior: 'auto'});
     }
     else
     circle_btn_right.forEach(function(cbr){
